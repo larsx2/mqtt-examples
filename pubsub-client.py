@@ -14,7 +14,7 @@ def on_message(client, data, message):
     """.format(message.topic, message.payload)
 
     time.sleep(1)
-    client.publish("demo/updates", payload=message.payload)
+    client.publish("/demo/updates", payload=message.payload)
 
 client = mqtt.Client()
 client.on_connect = on_connect
